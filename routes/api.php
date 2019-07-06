@@ -19,8 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 */
 
+Route::get('/test', function (){
+    return 'Welcome EGATE API';
+});
+
 Route::group(['middleware' => ['api', 'checkToken']], function () {
 
     Route::post('/landingPageService', 'LeadsController@landingPageService');
     Route::post('/phoneService', 'LeadsController@phoneService');
+    Route::get('/getLeads', 'LeadsController@getLeads');
 });

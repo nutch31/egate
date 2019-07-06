@@ -21,6 +21,6 @@ class Campaign extends Model
      */
     public function channels()
     {
-        return $this->hasMany('App\Channel');
+        return $this->hasMany(Channel::class);
     }
 }

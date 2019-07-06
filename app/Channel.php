@@ -24,7 +24,7 @@ class Channel extends Model
      */
     public function campaign()
     {
-        return $this->belongsTo('App\Campaign');
+        return $this->belongsTo(Campaign::class);
     }
 
     /**
@@ -32,6 +32,6 @@ class Channel extends Model
      */
     public function leads()
     {
-        return $this->hasMany('App\Lead');
+        return $this->hasMany(Lead::class);
     }
 }

@@ -26,6 +26,7 @@ class Lead extends Model
     protected $fillable = [
         'channel_id',
         'type',
+        'submitted_date_time',
         'form_name',
         'form_email',
         'form_phone',
@@ -47,7 +48,7 @@ class Lead extends Model
      */
     public function channel()
     {
-        return $this->belongsTo('App\Channel');
+        return $this->belongsTo(Channel::class);
     }
 
     /**
@@ -55,6 +56,6 @@ class Lead extends Model
      */
     public function log_lead()
     {
-        return $this->hasOne('App\LogLead', 'lead_id', 'id');
+        return $this->hasOne(LogLead::class, 'lead_id', 'id');
     }
 }

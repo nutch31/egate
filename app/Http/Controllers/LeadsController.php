@@ -6,6 +6,7 @@ use App\Campaign;
 use App\Channel;
 use App\Lead;
 use App\LogLead;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -88,6 +89,7 @@ class LeadsController extends Controller
                  $lead = Lead::create([
                      'channel_id' => $request->get('channel_id'),
                      'type' => Lead::TYPE_SUBMITTED,
+                     'submitted_date_time' => Carbon::now(),
                      'form_name' => $request->get('name'),
                      'form_email' => $request->get('email'),
                      'form_phone' => $request->get('phone'),
@@ -143,6 +145,58 @@ class LeadsController extends Controller
         }
 
         return $array;
+    }
+
+    public function getLeads(Request $request)
+    {
+        try {
+            // Rules
+            $validator = Validator::make($request->all(), [
+                'campaign_id' => 'required|numeric',
+                'startDateTime' => 'required_with:endDateTime|date_format:Y-m-d\TH:i:s',
+                'endDateTime' => 'required_with:startDateTime|date_format:Y-m-d\TH:i:s|after:startDateTime',
+            ]);
+
+            if($validator->fails()) {
+                return response()->json([
+                    'response' => 'error',
+                    'message' => $validator->errors()->all()
+                ], 422);
+            }
+
+            $campaign = Campaign::where('id', $request->get('campaign_id'))->first();
+
+            $array_channel = [];
+
+            foreach($campaign->channels as $key => $channel)
+            {
+                $array_channel[$key] = $channel->id;
+            }
+
+            $query = Lead::whereIn('channel_id', $array_channel);
+
+            if(!empty($request->get('startDateTime')) && !empty($request->get('endDateTime')))
+            {
+                $startDateTime = Carbon::parse($request->get('startDateTime'));
+                $endDateTime   = Carbon::parse($request->get('endDateTime'));
+                $query->whereBetween('submitted_date_time', [$startDateTime, $endDateTime]);
+            }
+
+            $query->orderBy('submitted_date_time', 'Asc');
+            $response = $query->get();
+
+            return response()->json([
+                'response' => 'success',
+                'message' => 'Create lead success',
+                'data' => $response,
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'response' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
 
     public function phoneService(Request $request)

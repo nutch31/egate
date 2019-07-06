@@ -17,6 +17,7 @@ class CreateLeadsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('channel_id');
             $table->string('type');
+            $table->dateTime('submitted_date_time');
             $table->string('form_name')->nullable();
             $table->string('form_email')->nullable();
             $table->string('form_phone')->nullable();
