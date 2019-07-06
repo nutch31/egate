@@ -22,5 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['api', 'checkToken']], function () {
 
     Route::post('/landingPageService', 'LeadsController@landingPageService');
-    Route::post('/phoneService', 'LeadsController@landingPageService');
+    Route::post('/phoneService', 'LeadsController@phoneService');
 });
