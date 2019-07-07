@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Campaign;
 use App\Channel;
 use App\Lead;
@@ -9,13 +10,24 @@ use App\LogLead;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\SendEmailToCustomer;
+use Illuminate\Support\Facades\Mail;
 
 class LeadsController extends Controller
 {
+    /**
+     * LeadsController constructor.
+     */
     public function __construct()
     {
+        App::setLocale('th');
     }
 
+    /**
+     * @param Request $request
+     * store leads from landing page system
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function landingPageService(Request $request)
     {
         try {
@@ -106,6 +118,14 @@ class LeadsController extends Controller
                         'status' => 1
                     ]);
 
+                // Send Email
+                $campaign = Campaign::where('id', $channel->campaign_id)->first();
+
+                if(!empty($campaign->email))
+                {
+                    Mail::to($campaign->email)->send(new SendEmailToCustomer(Lead::EMAIL_FROM, $lead, $campaign));
+                }
+
                 return response()->json([
                     'response' => 'success',
                     'message' => 'Create lead success',
@@ -113,6 +133,11 @@ class LeadsController extends Controller
             }
             else
             {
+                LogLead::where('id', $log->id)
+                    ->update([
+                        'result' => json_encode(['Not found channel_id'])
+                    ]);
+
                 return response()->json([
                     'response' => 'error',
                     'message' => 'Not found channel_id',
@@ -173,7 +198,7 @@ class LeadsController extends Controller
                 $array_channel[$key] = $channel->id;
             }
 
-            $query = Lead::whereIn('channel_id', $array_channel);
+            $query = Lead::whereIn('channel_id', $array_channel)->with('channel');
 
             if(!empty($request->get('startDateTime')) && !empty($request->get('endDateTime')))
             {
@@ -187,7 +212,7 @@ class LeadsController extends Controller
 
             return response()->json([
                 'response' => 'success',
-                'message' => 'Create lead success',
+                'message' => 'Get lead success',
                 'data' => $response,
             ], 200);
 

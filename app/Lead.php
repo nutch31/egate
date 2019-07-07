@@ -21,6 +21,7 @@ class Lead extends Model
         'ip_address',
         'page_url'
     ];
+    const EMAIL_FROM = 'nutnutnutnutnutnutnutnutnutnut@gmail.com';
 
     protected $table = 'leads';
     protected $fillable = [
