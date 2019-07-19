@@ -21,6 +21,7 @@ class CreateChannelsTable extends Migration
             $table->string('analytic_campaign_id')->nullable();
             $table->string('tracking_phone')->nullable();
             $table->string('forward_phone')->nullable();
+            $table->string('page_url')->nullable();
             $table->timestamps();
 
             /*

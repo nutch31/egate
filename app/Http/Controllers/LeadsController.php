@@ -40,8 +40,8 @@ class LeadsController extends Controller
 
             // Rules
             $validator = Validator::make($request->all(), [
-                'channel_id' => 'required|numeric',
-                'name' => 'required|string',
+                'channel-id' => 'required|numeric',
+                'full-name' => 'required|string',
                 'phone' => 'required',
                 'email' => 'required|email',
             ]);
@@ -60,7 +60,7 @@ class LeadsController extends Controller
 
             // Found Campaign_id
             $channel = Channel::where([
-                ['id', $request->get('channel_id')]
+                ['id', $request->get('channel-id')]
             ])->first();
 
             if(!empty($channel))
@@ -99,15 +99,15 @@ class LeadsController extends Controller
                  }
 
                  $lead = Lead::create([
-                     'channel_id' => $request->get('channel_id'),
+                     'channel_id' => $request->get('channel-id'),
                      'type' => Lead::TYPE_SUBMITTED,
                      'submitted_date_time' => Carbon::now(),
-                     'form_name' => $request->get('name'),
+                     'form_name' => $request->get('full-name'),
                      'form_email' => $request->get('email'),
                      'form_phone' => $request->get('phone'),
                      'form_content' => json_encode($this->get_content($request)),
-                     'form_ip_address' => $request->get('ip_address'),
-                     'form_page_url' => $request->get('page_url'),
+                     'form_ip_address' => $request->get('ip-address'),
+                     'form_page_url' => $request->get('page-url'),
                      'is_duplicated' => $is_duplicated,
                      'parent_id' => $parent_id
                  ]);
@@ -123,13 +123,15 @@ class LeadsController extends Controller
 
                 if(!empty($campaign->email))
                 {
-                    Mail::to($campaign->email)->send(new SendEmailToCustomer(Lead::EMAIL_FROM, $lead, $campaign));
+                    //Mail::to($campaign->email)->send(new SendEmailToCustomer(Lead::EMAIL_FROM, $lead, $campaign));
                 }
 
+                /*
                 return response()->json([
                     'response' => 'success',
                     'message' => 'Create lead success',
                 ], 200);
+                */
             }
             else
             {

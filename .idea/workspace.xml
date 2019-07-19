@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19556f50-b6db-45f9-b102-81c6a33cfaf7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Lead.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lead.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeadsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="125" column="52" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="52" />
+            <state relative-caret-position="-47">
+              <caret line="133" column="18" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
               <folding>
                 <element signature="e#40#48#0#PHP" expanded="true" />
               </folding>
@@ -31,22 +30,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Mail/SendEmailToCustomer.php">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
-              <folding>
-                <element signature="e#28#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/email/sendEmailToCustomer.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+            <state relative-caret-position="304">
+              <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -61,7 +48,6 @@
       <find>not_content</find>
       <find>submitted_date_time</find>
       <find>smtp.mailtrap.io</find>
-      <find>smtp.mailtrap.io</find>
       <find>App\Http\Controllers\Mail</find>
       <find>campaign</find>
       <find>Campaign</find>
@@ -71,6 +57,8 @@
       <find>sendEmailToCustomer</find>
       <find>sendNotificationFormEmail</find>
       <find>SendEmailToCustomer</find>
+      <find>EMAIL_FROM</find>
+      <find>name</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,21 +72,21 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/CheckToken.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_06_103202_create_campaigns_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_06_195044_create_log_leads_table.php" />
         <option value="$PROJECT_DIR$/app/LogLead.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_06_103250_create_leads_table.php" />
         <option value="$PROJECT_DIR$/app/Campaign.php" />
         <option value="$PROJECT_DIR$/app/Channel.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.env.example" />
         <option value="$PROJECT_DIR$/app/Lead.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/app/Mail/SendEmailToCustomer.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/sendEmailToCustomer.php" />
         <option value="$PROJECT_DIR$/resources/lang/th/sendEmailToCustomer.php" />
         <option value="$PROJECT_DIR$/resources/views/email/sendEmailToCustomer.blade.php" />
+        <option value="$PROJECT_DIR$/app/Mail/SendEmailToCustomer.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" />
       </list>
     </option>
@@ -189,10 +177,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="127" />
-    <option name="width" value="1440" />
-    <option name="height" value="774" />
+    <option name="x" value="1912" />
+    <option name="y" value="165" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -206,6 +194,11 @@
             <path>
               <item name="egate" type="b2602c69:ProjectViewProjectNode" />
               <item name="egate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="egate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="egate" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="egate" type="b2602c69:ProjectViewProjectNode" />
@@ -228,7 +221,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EmailService" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -262,18 +255,24 @@
       <option name="presentableId" value="Default" />
       <updated>1562403835387</updated>
       <workItem from="1562403836573" duration="23862000" />
-      <workItem from="1562503147753" duration="4947000" />
+      <workItem from="1562503147753" duration="5069000" />
+      <workItem from="1562570660868" duration="280000" />
+      <workItem from="1562755984594" duration="1373000" />
+      <workItem from="1562923503466" duration="67000" />
+      <workItem from="1562925129062" duration="97000" />
+      <workItem from="1563502634689" duration="19000" />
+      <workItem from="1563507981309" duration="2951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28809000" />
+    <option name="totallyTimeSpent" value="33718000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="165" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21481876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -287,8 +286,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" visible="true" weight="0.30311614" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49798658" visible="true" weight="0.30311614" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5053305" side_tool="true" visible="true" weight="0.23185265" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4946695" visible="true" weight="0.23185265" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -337,13 +336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_06_195044_create_log_leads_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -376,13 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="25" selection-start-line="25" selection-end-line="30" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -426,13 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Lead.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_06_103202_create_campaigns_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -440,17 +418,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/email/sendEmailToCustomer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Lead.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Mail/SendEmailToCustomer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+        <state relative-caret-position="128">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
             <element signature="e#28#57#0#PHP" expanded="true" />
           </folding>
@@ -459,8 +465,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeadsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="125" column="52" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="52" />
+        <state relative-caret-position="-47">
+          <caret line="133" column="18" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
           <folding>
             <element signature="e#40#48#0#PHP" expanded="true" />
           </folding>
