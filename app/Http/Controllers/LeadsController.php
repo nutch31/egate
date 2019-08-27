@@ -49,7 +49,7 @@ class LeadsController extends Controller
             if($validator->fails()) {
                 LogLead::where('id', $log->id)
                     ->update([
-                        'result' => json_encode($validator->errors()->all())
+                        'result' => json_encode($validator->errors()->all(), JSON_UNESCAPED_UNICODE)
                     ]);
 
                 return response()->json([
@@ -105,7 +105,7 @@ class LeadsController extends Controller
                      'form_name' => $request->get('full-name'),
                      'form_email' => $request->get('email'),
                      'form_phone' => $request->get('phone'),
-                     'form_content' => json_encode($this->get_content($request)),
+                     'form_content' => json_encode($this->get_content($request), JSON_UNESCAPED_UNICODE),
                      'form_ip_address' => $request->get('ip-address'),
                      'form_page_url' => $request->get('page-url'),
                      'is_duplicated' => $is_duplicated,
@@ -137,7 +137,7 @@ class LeadsController extends Controller
             {
                 LogLead::where('id', $log->id)
                     ->update([
-                        'result' => json_encode(['Not found channel_id'])
+                        'result' => json_encode(['Not found channel_id'], JSON_UNESCAPED_UNICODE)
                     ]);
 
                 return response()->json([
