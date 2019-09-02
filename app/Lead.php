@@ -18,7 +18,7 @@ class Lead extends Model
         'full-name',
         'email',
         'phone',
-        'remote_ip',
+        '_remote_ip',
         'page-url'
     ];
     const EMAIL_FROM = 'nutnutnutnutnutnutnutnutnutnut@gmail.com';
