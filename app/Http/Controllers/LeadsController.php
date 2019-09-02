@@ -106,7 +106,7 @@ class LeadsController extends Controller
                      'form_email' => $request->get('email'),
                      'form_phone' => $request->get('phone'),
                      'form_content' => json_encode($this->get_content($request), JSON_UNESCAPED_UNICODE),
-                     'form_ip_address' => $request->get('ip-address'),
+                     'form_ip_address' => $request->get('remote_ip'),
                      'form_page_url' => $request->get('page-url'),
                      'is_duplicated' => $is_duplicated,
                      'parent_id' => $parent_id
