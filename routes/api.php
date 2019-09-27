@@ -29,3 +29,5 @@ Route::group(['middleware' => ['api', 'checkToken']], function () {
     Route::post('/phoneService', 'LeadsController@phoneService');
     Route::get('/getLeads', 'LeadsController@getLeads');
 });
+
+Route::get('/testSendEmail', 'TestController@testSendEmail');
