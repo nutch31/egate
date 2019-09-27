@@ -14,12 +14,13 @@ class Lead extends Model
     const TYPE_MISSED_CALL      = 'missed_call';
     const NOT_CONTENT = [
         'token',
+        '_url',
         'channel-id',
         'full-name',
-        'email',
         'phone',
+        'email',
         '_remote_ip',
-        'page-url'
+        'page-url',
     ];
     const EMAIL_FROM = 'nutnutnutnutnutnutnutnutnutnut@gmail.com';
 
