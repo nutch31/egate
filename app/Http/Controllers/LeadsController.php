@@ -31,6 +31,7 @@ class LeadsController extends Controller
     public function landingPageService(Request $request)
     {
         try {
+
             // Create Log_leads
             $log = LogLead::create([
                 'type' => Lead::LANDING_PAGE_SYSTEM,
@@ -38,14 +39,16 @@ class LeadsController extends Controller
                 'request' => $request
             ]);
 
-            // Rules
+            // Check Validation
             $validator = Validator::make($request->all(), [
+                '_url' => 'required',
                 'channel-id' => 'required|numeric',
                 'full-name' => 'required|string',
                 'phone' => 'required',
                 'email' => 'required|email',
             ]);
 
+            // Save Fail
             if($validator->fails()) {
                 LogLead::where('id', $log->id)
                     ->update([
@@ -58,9 +61,12 @@ class LeadsController extends Controller
                 ], 422);
             }
 
+            // Check channel-id from url first.
+            $channel_id = $this->getChannelId($request->get('_url'), $request->get('channel-id'));
+
             // Found Campaign_id
             $channel = Channel::where([
-                ['id', $request->get('channel-id')]
+                ['id', $channel_id]
             ])->first();
 
             if(!empty($channel))
@@ -99,7 +105,7 @@ class LeadsController extends Controller
                  }
 
                  $lead = Lead::create([
-                     'channel_id' => $request->get('channel-id'),
+                     'channel_id' => $channel_id,
                      'type' => Lead::TYPE_SUBMITTED,
                      'submitted_date_time' => Carbon::now(),
                      'form_name' => $request->get('full-name'),
@@ -229,5 +235,22 @@ class LeadsController extends Controller
     public function phoneService(Request $request)
     {
 
+    }
+
+    public function getChannelId($url, $channel_id)
+    {
+        $parts = parse_url($url);
+
+        if(isset($parts['query']))
+        {
+            parse_str($parts['query'], $query);
+
+            if(isset($query['channel-id']))
+            {
+                $channel_id = $query['channel-id'];
+            }
+        }
+
+        return $channel_id;
     }
 }

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19556f50-b6db-45f9-b102-81c6a33cfaf7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +30,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeadsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="105" column="45" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="45" />
+            <state relative-caret-position="374">
+              <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
               <folding>
                 <element signature="e#40#48#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/LandingPageRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -113,6 +121,10 @@
       <find>json_</find>
       <find>json_encode</find>
       <find>ip_address</find>
+      <find>$request-&gt;get('channel-id')</find>
+      <find>phoneService</find>
+      <find>getChannelId</find>
+      <find>$request-&gt;get</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,12 +151,13 @@
         <option value="$PROJECT_DIR$/app/Mail/SendEmailToCustomer.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_06_103218_create_channels_table.php" />
         <option value="$PROJECT_DIR$/app/Lead.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/resources/views/email/sendTestSendEmail.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/app/Mail/TestSendEmail.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/LandingPageRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LeadsController.php" />
       </list>
     </option>
   </component>
@@ -255,20 +268,20 @@
             <path>
               <item name="egate" type="b2602c69:ProjectViewProjectNode" />
               <item name="egate" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="egate" type="b2602c69:ProjectViewProjectNode" />
               <item name="egate" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="egate" type="b2602c69:ProjectViewProjectNode" />
               <item name="egate" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="email" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,12 +348,12 @@
       <workItem from="1568393231563" duration="704000" />
       <workItem from="1568397479927" duration="142000" />
       <workItem from="1568451722935" duration="15000" />
-      <workItem from="1569574528555" duration="607000" />
+      <workItem from="1569574528555" duration="4081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40779000" />
+    <option name="totallyTimeSpent" value="44253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -360,8 +373,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48590603" weight="0.3186969" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.5147651" side_tool="true" visible="true" weight="0.12606232" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4852349" visible="true" weight="0.12606232" />
       <window_info active="true" anchor="bottom" id="Inspection Results" order="12" sideWeight="0.49932885" visible="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -560,10 +573,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/LandingPageRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeadsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="105" column="45" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="45" />
+        <state relative-caret-position="374">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
           <folding>
             <element signature="e#40#48#0#PHP" expanded="true" />
           </folding>
